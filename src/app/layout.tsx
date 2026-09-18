@@ -8,7 +8,7 @@ const noto = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "烏梅公演座位紀錄",
+  title: "TPE48 公演座位紀錄",
   description: "用烏梅座位表記錄每一場公演坐過的位子",
 };
 

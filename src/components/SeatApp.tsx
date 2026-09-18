@@ -168,8 +168,7 @@ export function SeatApp({ username, onLogout }: Props) {
       <header className="border-b border-zinc-800 px-3 py-3 sm:px-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs tracking-widest text-orange-300">烏梅劇場座位表</p>
-            <h1 className="text-xl font-bold text-white sm:text-2xl">公演座位紀錄</h1>
+            <h1 className="text-xl font-bold text-white sm:text-2xl">TPE48 公演座位紀錄</h1>
             <p className="mt-1 text-sm text-zinc-400">
               {getDisplayName(username)}　已坐 {uniqueSeats} / {seats.length} 席　共 {visits.length} 場
             </p>
