@@ -191,7 +191,7 @@ export function SeatApp({ username, onLogout }: Props) {
           </div>
         </div>
         <p className="mt-2 text-xs text-zinc-500">
-          橘色／粉／黃是座位種類，點過並存檔的座位會變成綠色。
+          背景是烏梅座位表原圖。把滑鼠移到位子上再點，坐過的會變成綠色。
         </p>
       </section>
 
