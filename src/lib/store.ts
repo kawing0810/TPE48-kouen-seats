@@ -11,6 +11,9 @@ export type UserRecord = {
   username: string;
   passwordHash: string;
   visits: Visit[];
+  provider?: "password" | "google";
+  displayName?: string;
+  email?: string;
 };
 
 type Database = {
@@ -54,8 +57,14 @@ export function getSessionUser(): string | null {
   return localStorage.getItem(SESSION_KEY);
 }
 
+export function getDisplayName(username: string) {
+  const user = readDb().users[username];
+  return user?.displayName || user?.email || username;
+}
+
 export function logout() {
   localStorage.removeItem(SESSION_KEY);
+  window.google?.accounts?.id?.disableAutoSelect();
 }
 
 export async function register(username: string, password: string) {
@@ -73,6 +82,8 @@ export async function register(username: string, password: string) {
   db.users[name] = {
     username: name,
     passwordHash: await hashPassword(name, password),
+    provider: "password",
+    displayName: name,
     visits: [],
   };
   writeDb(db);
@@ -84,7 +95,7 @@ export async function login(username: string, password: string) {
   const name = username.trim();
   const db = readDb();
   const user = db.users[name];
-  if (!user) {
+  if (!user || user.provider === "google") {
     throw new Error("帳號或密碼不正確");
   }
   const hash = await hashPassword(name, password);
@@ -93,6 +104,30 @@ export async function login(username: string, password: string) {
   }
   localStorage.setItem(SESSION_KEY, name);
   return name;
+}
+
+export function loginWithGoogle(profile: {
+  sub: string;
+  email?: string;
+  name?: string;
+}) {
+  if (!profile.sub) {
+    throw new Error("Google 登入失敗");
+  }
+  const username = `google:${profile.sub}`;
+  const db = readDb();
+  const existing = db.users[username];
+  db.users[username] = {
+    username,
+    passwordHash: existing?.passwordHash ?? "",
+    provider: "google",
+    displayName: profile.name || profile.email || "Google 使用者",
+    email: profile.email,
+    visits: existing?.visits ?? [],
+  };
+  writeDb(db);
+  localStorage.setItem(SESSION_KEY, username);
+  return username;
 }
 
 export function getVisits(username: string): Visit[] {
@@ -131,6 +166,7 @@ export function exportUserData(username: string) {
     app: "kouen-seats",
     version: 1,
     username: user.username,
+    displayName: user.displayName,
     exportedAt: new Date().toISOString(),
     visits: user.visits,
   };

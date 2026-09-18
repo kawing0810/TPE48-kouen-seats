@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useState } from "react";
 import { login, register } from "@/lib/store";
+import { GoogleSignIn } from "./GoogleSignIn";
 
 type Props = {
   onAuthed: (username: string) => void;
@@ -13,6 +14,10 @@ export function AuthScreen({ onAuthed }: Props) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+
+  const handleGoogleError = useCallback((message: string) => {
+    setError(message);
+  }, []);
 
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -36,11 +41,20 @@ export function AuthScreen({ onAuthed }: Props) {
       <p className="text-sm tracking-widest text-orange-300">烏梅劇場</p>
       <h1 className="mt-2 text-3xl font-bold text-white">公演座位紀錄</h1>
       <p className="mt-3 text-sm leading-6 text-zinc-400">
-        每人一個帳戶，點座位記下自己坐過哪裡。資料存在這台瀏覽器，部署在
-        GitHub Pages 上不需要伺服器。
+        可用 Google 帳號登入，或自己註冊。座位紀錄會綁在這個瀏覽器裡的帳戶上。
       </p>
 
-      <div className="mt-8 flex rounded-full bg-zinc-800 p-1">
+      <div className="mt-8">
+        <GoogleSignIn onAuthed={onAuthed} onError={handleGoogleError} />
+      </div>
+
+      <div className="my-6 flex items-center gap-3 text-xs tracking-widest text-zinc-500">
+        <span className="h-px flex-1 bg-zinc-800" />
+        或使用帳號密碼
+        <span className="h-px flex-1 bg-zinc-800" />
+      </div>
+
+      <div className="flex rounded-full bg-zinc-800 p-1">
         <button
           className={`flex-1 rounded-full py-2 text-sm ${
             mode === "login" ? "bg-orange-500 text-white" : "text-zinc-300"
