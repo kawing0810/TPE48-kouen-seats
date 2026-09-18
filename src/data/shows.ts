@@ -13,7 +13,7 @@ export const PERFORMANCES: ShowOption[] = [
 export const TEAMS: ShowOption[] = [
   { id: "tiii", label: "Team TIII" },
   { id: "p", label: "Team P" },
-  { id: "kenkyuusei", label: "研究生" },
+  { id: "none", label: "無分組" },
   { id: "ttt", label: "Unit TIC TAC TOE" },
   { id: "pab", label: "Unit Peek A Boo" },
   { id: "other", label: "其他" },
