@@ -39,7 +39,7 @@ export const seats: Seat[] = [
     "y": 535.29,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "A3",
@@ -49,7 +49,7 @@ export const seats: Seat[] = [
     "y": 535.29,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "A6",
@@ -59,7 +59,7 @@ export const seats: Seat[] = [
     "y": 535.29,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "A7",
@@ -69,7 +69,7 @@ export const seats: Seat[] = [
     "y": 535.29,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "A8",
@@ -79,7 +79,7 @@ export const seats: Seat[] = [
     "y": 535.29,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B1",
@@ -89,7 +89,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B2",
@@ -99,7 +99,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B3",
@@ -109,7 +109,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B4",
@@ -119,7 +119,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B5",
@@ -129,7 +129,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B6",
@@ -139,7 +139,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B7",
@@ -149,7 +149,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "B8",
@@ -159,7 +159,7 @@ export const seats: Seat[] = [
     "y": 584.05,
     "w": 33.9,
     "h": 22.55,
-    "type": "general"
+    "type": "member"
   },
   {
     "id": "C1",
@@ -169,7 +169,7 @@ export const seats: Seat[] = [
     "y": 636.66,
     "w": 33.9,
     "h": 22.54,
-    "type": "member"
+    "type": "general"
   },
   {
     "id": "C2",
@@ -369,7 +369,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "E2",
@@ -409,7 +409,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "E6",
@@ -429,7 +429,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "E8",
@@ -439,7 +439,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "E9",
@@ -449,7 +449,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "E10",
@@ -459,7 +459,7 @@ export const seats: Seat[] = [
     "y": 741.34,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "F1",
@@ -509,7 +509,7 @@ export const seats: Seat[] = [
     "y": 793.68,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "F6",
@@ -529,7 +529,7 @@ export const seats: Seat[] = [
     "y": 793.68,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "F8",
@@ -539,7 +539,7 @@ export const seats: Seat[] = [
     "y": 793.68,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "F9",
@@ -549,7 +549,7 @@ export const seats: Seat[] = [
     "y": 793.68,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "F10",
@@ -559,7 +559,7 @@ export const seats: Seat[] = [
     "y": 793.68,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "G1",
@@ -609,7 +609,7 @@ export const seats: Seat[] = [
     "y": 846.02,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "G6",
@@ -629,7 +629,7 @@ export const seats: Seat[] = [
     "y": 846.02,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "G8",
@@ -639,7 +639,7 @@ export const seats: Seat[] = [
     "y": 846.02,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "G9",
@@ -649,7 +649,7 @@ export const seats: Seat[] = [
     "y": 846.02,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "G10",
@@ -659,7 +659,7 @@ export const seats: Seat[] = [
     "y": 846.02,
     "w": 33.9,
     "h": 22.54,
-    "type": "general"
+    "type": "women"
   },
   {
     "id": "H1",
@@ -709,7 +709,7 @@ export const seats: Seat[] = [
     "y": 898.36,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "H6",
@@ -719,7 +719,7 @@ export const seats: Seat[] = [
     "y": 898.36,
     "w": 33.9,
     "h": 22.54,
-    "type": "women"
+    "type": "general"
   },
   {
     "id": "H7",
@@ -769,7 +769,7 @@ export const seats: Seat[] = [
     "y": 951.08,
     "w": 33.9,
     "h": 22.54,
-    "type": "member"
+    "type": "raised"
   },
   {
     "id": "I2",
@@ -879,7 +879,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J2",
@@ -889,7 +889,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J3",
@@ -899,7 +899,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J4",
@@ -909,7 +909,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J5",
@@ -919,7 +919,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J6",
@@ -929,7 +929,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J7",
@@ -939,7 +939,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J8",
@@ -949,7 +949,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J9",
@@ -959,7 +959,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J10",
@@ -969,7 +969,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J11",
@@ -979,7 +979,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J12",
@@ -989,7 +989,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J13",
@@ -999,7 +999,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J14",
@@ -1009,7 +1009,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J15",
@@ -1019,7 +1019,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J16",
@@ -1029,7 +1029,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "J17",
@@ -1039,7 +1039,7 @@ export const seats: Seat[] = [
     "y": 1005.49,
     "w": 33.9,
     "h": 22.54,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "K1",
@@ -1229,7 +1229,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L2",
@@ -1239,7 +1239,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 27.65,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L3",
@@ -1249,7 +1249,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L4",
@@ -1259,7 +1259,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L5",
@@ -1269,7 +1269,7 @@ export const seats: Seat[] = [
     "y": 1107.48,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L6",
@@ -1279,7 +1279,7 @@ export const seats: Seat[] = [
     "y": 1107.48,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L7",
@@ -1289,7 +1289,7 @@ export const seats: Seat[] = [
     "y": 1107.48,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L8",
@@ -1299,7 +1299,7 @@ export const seats: Seat[] = [
     "y": 1107.48,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L9",
@@ -1309,7 +1309,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L10",
@@ -1319,7 +1319,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L11",
@@ -1329,7 +1329,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L12",
@@ -1339,7 +1339,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L13",
@@ -1349,7 +1349,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L14",
@@ -1359,7 +1359,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L15",
@@ -1369,7 +1369,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L16",
@@ -1379,7 +1379,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L17",
@@ -1389,7 +1389,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "L18",
@@ -1399,7 +1399,7 @@ export const seats: Seat[] = [
     "y": 1106.65,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M1",
@@ -1409,7 +1409,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M2",
@@ -1419,7 +1419,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M3",
@@ -1429,7 +1429,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M4",
@@ -1439,7 +1439,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M5",
@@ -1449,7 +1449,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M6",
@@ -1459,7 +1459,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M7",
@@ -1469,7 +1469,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M8",
@@ -1479,7 +1479,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M9",
@@ -1489,7 +1489,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M10",
@@ -1499,7 +1499,7 @@ export const seats: Seat[] = [
     "y": 1160.61,
     "w": 26.41,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M11",
@@ -1509,7 +1509,7 @@ export const seats: Seat[] = [
     "y": 1161.86,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M12",
@@ -1519,7 +1519,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M13",
@@ -1529,7 +1529,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.76,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M14",
@@ -1539,7 +1539,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M15",
@@ -1549,7 +1549,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M16",
@@ -1559,7 +1559,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M17",
@@ -1569,7 +1569,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M18",
@@ -1579,7 +1579,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M19",
@@ -1589,7 +1589,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "M20",
@@ -1599,7 +1599,7 @@ export const seats: Seat[] = [
     "y": 1161.44,
     "w": 29.55,
     "h": 22.55,
-    "type": "raised"
+    "type": "general"
   },
   {
     "id": "N1",

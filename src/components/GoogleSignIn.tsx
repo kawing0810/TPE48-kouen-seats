@@ -42,7 +42,10 @@ export function GoogleSignIn({ onAuthed, onError }: Props) {
           text: "signin_with",
           shape: "pill",
           locale: "zh-TW",
-          width: 360,
+          width: Math.max(
+            240,
+            Math.min(buttonRef.current.parentElement?.clientWidth || 280, 400),
+          ),
         });
         setReady(true);
       })
@@ -67,8 +70,8 @@ export function GoogleSignIn({ onAuthed, onError }: Props) {
   }
 
   return (
-    <div className="flex min-h-11 justify-center">
-      <div ref={buttonRef} className={ready ? "" : "h-11 w-full"} />
+    <div className="flex min-h-11 w-full justify-center">
+      <div ref={buttonRef} className={ready ? "w-full" : "h-11 w-full"} />
     </div>
   );
 }

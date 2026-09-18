@@ -37,9 +37,9 @@ export function AuthScreen({ onAuthed }: Props) {
   }
 
   return (
-    <main className="mx-auto flex min-h-full w-full max-w-md flex-col justify-center px-5 py-12">
+    <main className="mx-auto flex min-h-full w-full max-w-md flex-col justify-center px-4 py-8 sm:px-5 sm:py-12">
       <p className="text-sm tracking-widest text-orange-300">烏梅劇場</p>
-      <h1 className="mt-2 text-3xl font-bold text-white">公演座位紀錄</h1>
+      <h1 className="mt-2 text-2xl font-bold text-white sm:text-3xl">公演座位紀錄</h1>
       <p className="mt-3 text-sm leading-6 text-zinc-400">
         可用 Google 帳號登入，或自己註冊。座位紀錄會綁在這個瀏覽器裡的帳戶上。
       </p>

@@ -14,7 +14,7 @@ export function SeatMap({ visitsBySeat, selectedId, onSelect }: Props) {
   return (
     <svg
       viewBox={`0 0 ${MAP_SIZE.width} ${MAP_SIZE.height}`}
-      className="h-auto w-full min-w-[720px] select-none"
+      className="h-auto w-full touch-manipulation select-none"
       role="img"
       aria-label="烏梅劇場座位表"
     >
@@ -48,10 +48,10 @@ export function SeatMap({ visitsBySeat, selectedId, onSelect }: Props) {
             </title>
             <rect
               className={count > 0 || selected ? undefined : "seat-hit"}
-              x={seat.x - 1}
-              y={seat.y - 6}
-              width={seat.w + 2}
-              height={28}
+              x={seat.x - 2}
+              y={seat.y - 8}
+              width={seat.w + 4}
+              height={32}
               rx="4"
               fill={count > 0 ? "rgba(53, 194, 122, 0.78)" : selected ? "rgba(255,255,255,0.18)" : "transparent"}
               stroke={selected ? "#ffffff" : count > 0 ? "#bbffd8" : "transparent"}

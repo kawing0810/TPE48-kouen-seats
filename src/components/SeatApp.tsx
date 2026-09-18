@@ -106,53 +106,53 @@ export function SeatApp({ username, onLogout }: Props) {
 
   return (
     <div className="flex min-h-full flex-col lg:flex-row">
-      <section className="min-w-0 flex-1 p-4 lg:p-6">
-        <header className="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <section className={`min-w-0 flex-1 p-3 sm:p-4 lg:p-6 ${selected ? "pb-4 lg:pb-6" : ""}`}>
+        <header className="mb-3 flex flex-col gap-3 sm:mb-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
           <div>
             <p className="text-xs tracking-widest text-orange-300">烏梅劇場座位表</p>
-            <h1 className="text-2xl font-bold text-white">公演座位紀錄</h1>
+            <h1 className="text-xl font-bold text-white sm:text-2xl">公演座位紀錄</h1>
             <p className="mt-1 text-sm text-zinc-400">
               {getDisplayName(username)}　已坐 {uniqueSeats} / {seats.length} 席　共 {visits.length} 場
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
-              onClick={() => setZoom((z) => Math.max(0.7, Number((z - 0.15).toFixed(2))))}
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
+              onClick={() => setZoom((z) => Math.max(1, Number((z - 0.35).toFixed(2))))}
               type="button"
             >
               縮小
             </button>
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
               onClick={() => setZoom(1)}
               type="button"
             >
-              原尺寸
+              全圖
             </button>
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
-              onClick={() => setZoom((z) => Math.min(1.8, Number((z + 0.15).toFixed(2))))}
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
+              onClick={() => setZoom((z) => Math.min(3, Number((z + 0.35).toFixed(2))))}
               type="button"
             >
               放大
             </button>
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
               onClick={handleExport}
               type="button"
             >
               匯出
             </button>
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
               onClick={() => fileRef.current?.click()}
               type="button"
             >
               匯入
             </button>
             <button
-              className="rounded-lg bg-zinc-800 px-3 py-1.5 text-sm text-zinc-200"
+              className="min-h-11 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-200"
               onClick={() => {
                 logout();
                 onLogout();
@@ -181,25 +181,51 @@ export function SeatApp({ username, onLogout }: Props) {
           </p>
         ) : null}
 
-        <div className="overflow-auto rounded-2xl border border-zinc-800 bg-[#141416] p-3">
-          <div style={{ width: `${zoom * 100}%` }} className="min-w-[720px]">
+        <div className="overflow-auto overscroll-contain rounded-2xl border border-zinc-800 bg-[#141416] p-1 sm:p-3">
+          <div style={{ width: `${zoom * 100}%` }} className="min-w-full">
             <SeatMap
               visitsBySeat={visitsBySeat}
               selectedId={selected?.id ?? null}
-              onSelect={setSelected}
+              onSelect={(seat) => {
+                setSelected(seat);
+                window.setTimeout(() => {
+                  document.getElementById("seat-panel")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                  });
+                }, 50);
+              }}
             />
           </div>
         </div>
         <p className="mt-2 text-xs text-zinc-500">
-          背景是烏梅座位表原圖。把滑鼠移到位子上再點，坐過的會變成綠色。
+          手機請先看全圖，再按「放大」點位子。坐過的座位會變成綠色。
         </p>
       </section>
 
-      <aside className="w-full shrink-0 border-t border-zinc-800 bg-zinc-950 p-4 lg:w-[360px] lg:border-l lg:border-t-0">
+      <aside
+        id="seat-panel"
+        className={`w-full shrink-0 border-zinc-800 bg-zinc-950 p-4 lg:w-[360px] lg:border-l lg:border-t-0 ${
+          selected
+            ? "fixed inset-x-0 bottom-0 z-20 max-h-[52vh] overflow-auto rounded-t-2xl border-t pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.45)] lg:static lg:max-h-none lg:overflow-visible lg:rounded-none lg:shadow-none"
+            : "border-t"
+        }`}
+      >
         {selected ? (
           <div className="mb-6">
-            <p className="text-xs text-zinc-400">{SEAT_TYPE_LABEL[selected.type]}</p>
-            <h2 className="text-xl font-bold text-white">{selected.id}</h2>
+            <div className="mb-2 flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs text-zinc-400">{SEAT_TYPE_LABEL[selected.type]}</p>
+                <h2 className="text-xl font-bold text-white">{selected.id}</h2>
+              </div>
+              <button
+                className="min-h-11 rounded-lg px-3 text-sm text-zinc-400 lg:hidden"
+                onClick={() => setSelected(null)}
+                type="button"
+              >
+                關閉
+              </button>
+            </div>
             <form
               className="mt-3 space-y-3"
               onSubmit={(e) => {
@@ -210,7 +236,7 @@ export function SeatApp({ username, onLogout }: Props) {
               <label className="block text-sm text-zinc-300">
                 公演日期
                 <input
-                  className="mt-1 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-white"
+                  className="mt-1 min-h-11 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-base text-white"
                   type="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
@@ -220,7 +246,7 @@ export function SeatApp({ username, onLogout }: Props) {
               <label className="block text-sm text-zinc-300">
                 公演名稱
                 <input
-                  className="mt-1 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-white"
+                  className="mt-1 min-h-11 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-base text-white"
                   placeholder="例如：通常公演／特別公演"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -229,14 +255,14 @@ export function SeatApp({ username, onLogout }: Props) {
               <label className="block text-sm text-zinc-300">
                 備註
                 <input
-                  className="mt-1 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-white"
+                  className="mt-1 min-h-11 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-base text-white"
                   placeholder="可填成員、心情或其他"
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
                 />
               </label>
               <button
-                className="w-full rounded-lg bg-orange-500 py-2 font-semibold text-white"
+                className="min-h-11 w-full rounded-lg bg-orange-500 py-2 font-semibold text-white"
                 type="submit"
               >
                 記下這個位子
@@ -261,7 +287,7 @@ export function SeatApp({ username, onLogout }: Props) {
                         ) : null}
                       </div>
                       <button
-                        className="text-xs text-rose-300"
+                        className="min-h-11 px-2 text-sm text-rose-300"
                         onClick={() => handleDelete(visit.id)}
                         type="button"
                       >
@@ -277,21 +303,22 @@ export function SeatApp({ username, onLogout }: Props) {
           <p className="mb-6 text-sm text-zinc-400">點座位圖上的位子，開始記錄這一場坐哪。</p>
         )}
 
+        <div className={selected ? "hidden lg:block" : ""}>
         <h3 className="text-sm font-semibold text-white">全部紀錄</h3>
         <input
-          className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white"
+          className="mt-2 min-h-11 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-base text-white"
           placeholder="搜尋日期、座位、公演…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <ul className="mt-3 max-h-[40vh] space-y-2 overflow-auto lg:max-h-[46vh]">
+        <ul className="mt-3 max-h-[30vh] space-y-2 overflow-auto lg:max-h-[46vh]">
           {filteredHistory.length === 0 ? (
             <li className="text-sm text-zinc-500">還沒有公演紀錄。</li>
           ) : (
             filteredHistory.map((visit) => (
               <li key={visit.id}>
                 <button
-                  className="w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-left text-sm hover:border-orange-400"
+                  className="min-h-11 w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-left text-sm hover:border-orange-400"
                   onClick={() =>
                     setSelected(seats.find((s) => s.id === visit.seatId) ?? null)
                   }
@@ -305,6 +332,7 @@ export function SeatApp({ username, onLogout }: Props) {
             ))
           )}
         </ul>
+        </div>
       </aside>
     </div>
   );
