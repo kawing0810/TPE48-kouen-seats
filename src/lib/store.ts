@@ -2,10 +2,30 @@ export type Visit = {
   id: string;
   seatId: string;
   date: string;
+  time: string;
   title: string;
+  team: string;
   note: string;
   createdAt: string;
 };
+
+export function formatVisitWhen(visit: Pick<Visit, "date" | "time">) {
+  return visit.time ? `${visit.date} ${visit.time}` : visit.date;
+}
+
+function normalizeVisit(visit: Partial<Visit> | null | undefined): Visit | null {
+  if (!visit?.seatId || !visit?.date) return null;
+  return {
+    id: String(visit.id || crypto.randomUUID()),
+    seatId: String(visit.seatId),
+    date: String(visit.date),
+    time: String(visit.time || ""),
+    title: String(visit.title || ""),
+    team: String(visit.team || ""),
+    note: String(visit.note || ""),
+    createdAt: String(visit.createdAt || new Date().toISOString()),
+  };
+}
 
 export type UserRecord = {
   username: string;
@@ -131,7 +151,9 @@ export function loginWithGoogle(profile: {
 }
 
 export function getVisits(username: string): Visit[] {
-  return readDb().users[username]?.visits ?? [];
+  return (readDb().users[username]?.visits ?? [])
+    .map((visit) => normalizeVisit(visit))
+    .filter((visit): visit is Visit => Boolean(visit));
 }
 
 export function addVisit(
@@ -164,11 +186,11 @@ export function exportUserData(username: string) {
   if (!user) throw new Error("找不到這個帳號");
   return {
     app: "kouen-seats",
-    version: 1,
+    version: 2,
     username: user.username,
     displayName: user.displayName,
     exportedAt: new Date().toISOString(),
-    visits: user.visits,
+    visits: getVisits(username),
   };
 }
 
@@ -186,15 +208,17 @@ export function importUserData(username: string, payload: unknown) {
     const id = visit.id || crypto.randomUUID();
     if (seen.has(id)) continue;
     seen.add(id);
-    user.visits.push({
+    const next = normalizeVisit({
+      ...visit,
       id,
-      seatId: String(visit.seatId),
-      date: String(visit.date),
-      title: String(visit.title || ""),
-      note: String(visit.note || ""),
-      createdAt: String(visit.createdAt || new Date().toISOString()),
     });
+    if (!next) continue;
+    user.visits.push(next);
   }
-  user.visits.sort((a, b) => (a.date < b.date ? 1 : -1));
+  user.visits.sort((a, b) => {
+    const aWhen = `${a.date} ${a.time || "00:00"}`;
+    const bWhen = `${b.date} ${b.time || "00:00"}`;
+    return aWhen < bWhen ? 1 : -1;
+  });
   writeDb(db);
 }
